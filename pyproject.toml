@@ -1,0 +1,33 @@
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "images-mcp"
+version = "0.1.0"
+description = "Minimal image format conversion toolkit with a simple CLI."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Paolo" }]
+requires-python = ">=3.10.0,<3.13"
+dependencies = [
+  "pillow>=10,<11",
+  "pillow-avif-plugin>=1.4.3",
+  "mcp>=1.2.0",
+  "unstructured>=0.14,<0.16",
+  "openai>=1.0.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+image-convert = "images_mcp.cli:main"
+images-mcp = "images_mcp.mcp_server:main"
+
+[tool.poetry]
+packages = [
+  { include = "images_mcp" }
+]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+

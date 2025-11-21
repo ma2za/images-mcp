@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+      "local-server": {
+        "command": "python",
+        "args": ["${workspaceFolder}/images_mcp/mcp_server.py"]
+      }
+    }
+  }
